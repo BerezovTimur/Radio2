@@ -7,6 +7,22 @@ import static org.junit.jupiter.api.Assertions.*;
 class RadioTest {
 
     @Test
+    public void shouldSwitchChanelUp() {
+        Radio radio = new Radio();
+        radio.setStation(1);
+        radio.switchArrowsUp();
+        assertEquals(2, radio.getStation());
+    }
+
+    @Test
+    public void shouldSwitchChanelDown() {
+        Radio radio = new Radio();
+        radio.setStation(2);
+        radio.switchArrowsDown();
+        assertEquals(1, radio.getStation());
+    }
+
+    @Test
     public void shouldIncreaseVolume() {
         Radio radio = new Radio();
         radio.setMaxVolume(10);
