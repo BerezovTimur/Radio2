@@ -9,18 +9,23 @@ class RadioTest {
     @Test
     public void shouldSwitchChanelUp() {
         Radio radio = new Radio();
-        radio.setStation(1);
+        radio.setMaxChanel(9);
+        radio.setMinChanel(0);
+        radio.setStation(8);
         radio.switchArrowsUp();
-        assertEquals(2, radio.getStation());
+        assertEquals(9, radio.getStation());
     }
 
     @Test
     public void shouldSwitchChanelDown() {
         Radio radio = new Radio();
+        radio.setMaxChanel(9);
+        radio.setMinChanel(0);
         radio.setStation(2);
         radio.switchArrowsDown();
         assertEquals(1, radio.getStation());
     }
+
 
     @Test
     public void shouldIncreaseVolume() {
@@ -41,5 +46,7 @@ class RadioTest {
         radio.volumeDown();
         assertEquals(7, radio.getCurrentVolume());
     }
+
+
 
 }
