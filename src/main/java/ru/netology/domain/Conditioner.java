@@ -7,13 +7,13 @@ public class Conditioner {
     private int currentTemperature;
     private boolean on;
 
-   /* public String getName() {
+    public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
-    }*/
+    }
 
     public int getMaxTemperature() {
         return maxTemperature;
@@ -61,11 +61,11 @@ public class Conditioner {
         this.currentTemperature = decreasedTemperature;
     }
 
-/*    public boolean isOn() {
+    public boolean isOn() {
         return on;
     }
 
     public void setOn(boolean on) {
         this.on = on;
-    }*/
+    }
 }
