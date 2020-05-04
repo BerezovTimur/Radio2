@@ -1,19 +1,25 @@
 package ru.netology.domain;
 
 public class Radio {
-    private int station;
-    private int maxChanel;
-    private int minChanel;
-    private int maxVolume;
-    private int minVolume;
+    private int maxChanel = 9;
+    private int minChanel = 0;
+    private int currentChanel;
+    private int maxVolume = 10;
+    private int minVolume = 0;
     private int currentVolume;
 
     public int getStation() {
-        return station;
+        return currentChanel;
     }
 
-    public void setStation(int station) {
-        this.station = station;
+    public void setStation(int currentChanel) {
+        if (currentChanel > maxChanel){
+            return;
+        }
+        if (currentChanel < minChanel){
+            return;
+        }
+        this.currentChanel = currentChanel;
     }
 
     public int getMaxChanel() {
@@ -34,22 +40,20 @@ public class Radio {
 
     //Переключение вверх
     public void switchArrowsUp() {
-        int chanelUp = station + 1;
-        if (chanelUp > maxChanel) {
-            station = 0;
+        if (currentChanel == maxChanel) {
+            currentChanel = 0;
             return;
         }
-        this.station = chanelUp;
+        this.currentChanel ++;
     }
 
     //Переключение вниз
     public void switchArrowsDown() {
-        int chanelDown = station - 1;
-        if (chanelDown < minChanel) {
-            station = 9;
+        if (currentChanel == minChanel){
+            currentChanel = 9;
             return;
         }
-        this.station = chanelDown;
+        this.currentChanel --;
     }
 
     public int getMinVolume() {
@@ -84,21 +88,17 @@ public class Radio {
 
     //Увеличить громкость
     public void volumeUp() {
-        int increasedVolume = currentVolume + 1;
-        if (increasedVolume > maxVolume) {
-            currentVolume = maxVolume;
+        if (currentVolume == maxVolume){
             return;
         }
-        this.currentVolume = increasedVolume;
+        this.currentVolume ++;
     }
 
     //Уменьшить громкость
     public void volumeDown() {
-        int decreasedVolume = currentVolume - 1;
-        if (decreasedVolume < minVolume) {
-            currentVolume = minVolume;
+        if (currentVolume == minVolume){
             return;
         }
-        this.currentVolume = decreasedVolume;
+        this.currentVolume --;
     }
 }
