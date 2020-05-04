@@ -6,16 +6,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ConditionerTest {
 
-    /*@Test
-    public void shouldNotChangeFieldValue(){
-        Conditioner conditioner = new Conditioner();
-        assertEquals(0, conditioner.getCurrentTemperature());
-        conditioner.setCurrentTemperature(100);
-        assertEquals(0, conditioner.getCurrentTemperature());
-
-        System.out.println("Hi");
-    }*/
-
     @Test
     public void shouldIncreaseTemperature() {
         Conditioner conditioner = new Conditioner();
@@ -56,4 +46,4 @@ class ConditionerTest {
         assertEquals(14, conditioner.getCurrentTemperature());
     }
 
-    }
+}
