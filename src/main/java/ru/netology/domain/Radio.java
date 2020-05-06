@@ -41,7 +41,7 @@ public class Radio {
     //Переключение вверх
     public void switchArrowsUp() {
         if (currentChanel == maxChanel) {
-            currentChanel = 0;
+            currentChanel = minChanel;
             return;
         }
         this.currentChanel ++;
@@ -50,7 +50,7 @@ public class Radio {
     //Переключение вниз
     public void switchArrowsDown() {
         if (currentChanel == minChanel){
-            currentChanel = 9;
+            currentChanel = maxChanel;
             return;
         }
         this.currentChanel --;
