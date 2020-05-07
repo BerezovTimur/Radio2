@@ -11,28 +11,28 @@ class RadioTest {
     @Test
     public void shouldSetCurrentStation(){
         radio.setStation(5);
-        assertEquals(5, radio.getStation());
+        assertEquals(5, radio.getCurrentChanel());
     }
 
     @Test
     public void shouldSetUnderLimitStation(){
         int underLimitStation = radio.getMaxChanel()+1;
         radio.setStation(underLimitStation);
-        assertEquals(0, radio.getStation());
+        assertEquals(0, radio.getCurrentChanel());
     }
 
     @Test
     public void shouldSetOverLimitStation(){
         int overLimitStation = radio.getMinChanel() - 1;
         radio.setStation(overLimitStation);
-        assertEquals(0, radio.getStation());
+        assertEquals(0, radio.getCurrentChanel());
     }
 
     @Test
     public void shouldSwitchChanelUp() {
         radio.setStation(7);
         radio.switchArrowsUp();
-        assertEquals(8, radio.getStation());
+        assertEquals(8, radio.getCurrentChanel());
     }
 
     @Test
@@ -41,14 +41,14 @@ class RadioTest {
         int maxChanel = radio.getMaxChanel();
         radio.setStation(maxChanel);
         radio.switchArrowsUp();
-        assertEquals(expected, radio.getStation());
+        assertEquals(expected, radio.getCurrentChanel());
     }
 
     @Test
     public void shouldSwitchChanelDown() {
         radio.setStation(8);
         radio.switchArrowsDown();
-        assertEquals(7, radio.getStation());
+        assertEquals(7, radio.getCurrentChanel());
     }
 
     @Test
@@ -57,7 +57,7 @@ class RadioTest {
         int minChanel = radio.getMinChanel();
         radio.setStation(minChanel);
         radio.switchArrowsDown();
-        assertEquals(expected, radio.getStation());
+        assertEquals(expected, radio.getCurrentChanel());
     }
 
     @Test
