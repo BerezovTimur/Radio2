@@ -7,8 +7,7 @@ public class Radio {
     private int maxVolume = 100;
     private int currentVolume;
     private int currentChanel;
-    private int underLimitStation;
-
+    
     public Radio(int minChanel, int maxChanel, int minVolume, int maxVolume) {
         this.minChanel = minChanel;
         this.maxChanel = maxChanel;
