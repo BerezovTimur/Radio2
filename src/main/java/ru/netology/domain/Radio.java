@@ -1,13 +1,13 @@
 package ru.netology.domain;
 
 public class Radio {
-    private int minChanel = 0;
-    private int maxChanel = 10;
-    private int minVolume = 0;
-    private int maxVolume = 100;
+    private int minChanel;
+    private int maxChanel;
+    private int minVolume;
+    private int maxVolume;
     private int currentVolume;
     private int currentChanel;
-    
+
     public Radio(int minChanel, int maxChanel, int minVolume, int maxVolume) {
         this.minChanel = minChanel;
         this.maxChanel = maxChanel;
